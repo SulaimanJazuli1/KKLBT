@@ -35,8 +35,8 @@ return [
         'administrasi' => ['label' => 'Wilayah Administrasi', 'group' => 'administrasi'],
         'sungai' => ['label' => 'Sungai', 'group' => 'perairan'],
         'sig' => ['label' => 'Sistem Informasi Geografis', 'group' => 'analisis'],
-        'ppw' => ['label' => 'Perencanaan Pembangunan Wilayah', 'group' => 'analisis'],
         'lmb' => ['label' => 'Lingkungan Mitigasi Bencana', 'group' => 'analisis'],
+        'ppw' => ['label' => 'Perencanaan Pembangunan Wilayah', 'group' => 'analisis'],
 
     ],
 
@@ -255,6 +255,9 @@ return [
             'popup'    => [
                 'title'  => 'Batas',
                 'fields' => [
+                    'WADMPR' => 'Kalimantan Selatan',
+                    'WADMKK' => 'Hulu Sungai Tengah',
+                    'WADMKC' => 'Hantakan',
                     'WADMKD' => 'Alat',
                 ],
             ],
@@ -348,6 +351,29 @@ return [
             ],
         ],
 
+                                             // Lingkungan Mitigasi Bencana //
+                'Tanah' => [
+            'label'    => 'Jenis Tanah',
+            'category' => 'lmb',
+            'geometry' => 'polygon',
+            'rank'     => 'polygon',
+            'file'     => 'Jenis Tanah.geojson',
+            'visible'  => false,
+            'style'      => [
+                'color'        => 'from_geojson',
+                'fill_opacity' => 0.6,
+                'width'        => 1
+            ],
+            'popup'    => [
+                'title'  => 'Jenis Tanah',
+                'fields' => [
+                    'Tanah' => 'Tanah',
+                    'Luas' => 'Luas Area',
+                ],
+            ],
+        ],
+
+
                                             // Perencanaan Pembangunan Wilayah //
 
             'PR' => [
@@ -370,8 +396,5 @@ return [
                 ],
             ],
         ],
-
-
-                                            // Lingkungan Mitigasi Bencana //
     ],
 ];
