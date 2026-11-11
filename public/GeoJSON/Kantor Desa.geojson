@@ -12,20 +12,14 @@
             "type": "Feature",
             "properties": {
                 "NAMOBJ": "Kantor Kepala Desa Alat",
-                "FGSGOV": 10,
-                "LUAS": 0.0,
-                "FCODE": null,
-                "REMARK": "Kantor Kepala Desa",
-                "SRS_ID": null,
-                "LCODE": "GD0020",
-                "METADATA": null
+                "foto": "kantor"
             },
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    115.478745301000117,
-                    -2.625275311999928,
-                    69.092600000003586
+                    115.478608611197487,
+                    -2.625209411238448,
+                    0.0
                 ]
             }
         }

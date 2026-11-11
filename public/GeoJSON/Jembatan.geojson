@@ -13,15 +13,46 @@
             "properties": {
                 "NAMOBJ": "Jembatan Gantung",
                 "REMARK": "Jembatan",
-                "LCODE": "CA0100",
-                "FTYPE": "Transportasi",
-                "foto": "Jembatan.jpg"
+                "foto": "masjid-al-munawarah.jpg"
             },
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    115.474781,
-                    -2.630439
+                    115.479473025315343,
+                    -2.626205623265817,
+                    0.0
+                ]
+            }
+        },
+                {
+            "type": "Feature",
+            "properties": {
+                "NAMOBJ": "Jembatan",
+                "REMARK": "Jembatan",
+                "foto": "masjid-al-munawarah.jpg"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    115.474823308648496,
+                    -2.630482139217483,
+                    0.0
+                ]
+            }
+        },
+                {
+            "type": "Feature",
+            "properties": {
+                "NAMOBJ": "Jembatan Gantung Batu Saharah",
+                "REMARK": "Jembatan",
+                "foto": "masjid-al-munawarah.jpg"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    115.495205754603788,
+                    -2.625440872322425,
+                    0.0
                 ]
             }
         }

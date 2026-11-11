@@ -13,16 +13,14 @@
             "properties": {
                 "NAMOBJ": "Masjid Al-Munawarah",
                 "REMARK": "Masjid",
-                "LCODE": "GF0020",
-                "FTYPE": "Peribadatan",
-                "foto": "Masjid1.jpg"
+                "foto": "masjid-al-munawarah.jpg"
             },
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    115.473085654000101,
-                    -2.632128941999952,
-                    57.984800000005635
+                    115.47299761394288,
+                    -2.632288365887347,
+                    0.0
                 ]
             }
         },
@@ -31,16 +29,94 @@
             "properties": {
                 "NAMOBJ": "Masjid Darul Thalibin",
                 "REMARK": "Masjid",
-                "LCODE": "GF0020",
-                "FTYPE": "Peribadatan",
-                "foto": "Masjid2.jpg"
+                "foto": "masjid-al-munawarah.jpg"
             },
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    115.478935992000061,
-                    -2.626045361999957,
-                    62.651800000006915
+                    115.478499360905502,
+                    -2.625633715245938,
+                    0.0
+                ]
+            }
+        },
+                {
+            "type": "Feature",
+            "properties": {
+                "NAMOBJ": "Masjid Miftahul Jannah",
+                "REMARK": "Masjid",
+                "foto": "masjid-al-munawarah.jpg"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    115.494756512365896,
+                    -2.623736543719315,
+                    0.0
+                ]
+            }
+        },
+                {
+            "type": "Feature",
+            "properties": {
+                "NAMOBJ": "Langgar Nur Hidayah",
+                "REMARK": "Langgar",
+                "foto": "masjid-al-munawarah.jpg"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    115.473016949582998,
+                    -2.631013247283718,
+                    0.0
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "NAMOBJ": "Musholla Muhtadin",
+                "REMARK": "Musholla",
+                "foto": "masjid-al-munawarah.jpg"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    115.476576385301641,
+                    -2.629056438039044,
+                    0.0
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "NAMOBJ": "Musholla Baitus Syukur",
+                "REMARK": "Musholla",
+                "foto": "masjid-al-munawarah.jpg"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    115.478982734216885,
+                    -2.627503839732726,
+                    0.0
+                ]
+            }
+        },
+                {
+            "type": "Feature",
+            "properties": {
+                "NAMOBJ": "Langgar Nur Sa'adah",
+                "REMARK": "Langgar",
+                "foto": "masjid-al-munawarah.jpg"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    115.471187275231998,
+                    -2.633203945933769,
+                    0.0
                 ]
             }
         }

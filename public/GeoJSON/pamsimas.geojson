@@ -1,0 +1,29 @@
+{
+    "type": "FeatureCollection",
+    "name": "Topo",
+    "crs": {
+        "type": "name",
+        "properties": {
+            "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
+        }
+    },
+    "features": [
+          {
+            "type": "Feature",
+            "properties": {
+                "NAMOBJ": "PAMSIMAS 3",
+                "REMARK": "Spam",
+                "foto": "masjid-al-munawarah.jpg"
+
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    115.48154484500003,
+                    -2.625099731999959,
+                    0.0
+                ]
+            }
+        }
+    ]
+}

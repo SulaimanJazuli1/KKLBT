@@ -13,16 +13,30 @@
             "properties": {
                 "NAMOBJ": "Pemakaman Khusus",
                 "REMARK": "Pemakaman Khusus",
-                "LCODE": "GH0020",
-                "FTYPE": "Permakaman",
-                "foto": "Pemakaman.jpg"
+                "foto": "makam.jpg"
             },
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    115.474102127000037,
-                    -2.630321221999964,
-                    57.119800000000396
+                    115.473968877183708,
+                    -2.630235561403751,
+                    0.0
+                ]
+            }
+        },
+                {
+            "type": "Feature",
+            "properties": {
+                "NAMOBJ": "Pemakaman Umum",
+                "REMARK": "Pemakaman Umum",
+                "foto": "makam umum.jpg"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    115.495496300000013,
+                    -2.62393739999994,
+                    0.0
                 ]
             }
         }
