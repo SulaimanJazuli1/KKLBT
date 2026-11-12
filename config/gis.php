@@ -288,7 +288,7 @@ return [
             ],
         ],
 
-                'Jaringan' => [
+        'Jaringan' => [
             'label'    => 'Sistem Jaringan',
             'category' => 'listrik',
             'geometry' => 'line',
@@ -336,9 +336,8 @@ return [
             'popup'    => [
                 'title'  => 'RT',
                 'fields' => [
-                    'NAME_2' => 'Kabupaten',
-                    'NAME_3' => 'Kecamatan',
-                    'Total' => 'Luas Wilayah (Ha)'
+                    'BatasRT' => 'Wilayah RT',
+                    'Luas' => 'Luas Wilayah'
                 ],
             ],
         ],
@@ -346,7 +345,7 @@ return [
                                             // Sistem Informasi Geografis
 
         'NDVI' => [
-            'label'    => 'NDVI (Indeks Vegetasi)',
+            'label'    => 'NDVI (Normalized Difference Vegetation Index)',
             'category' => 'sig',
             'geometry' => 'polygon',
             'rank'     => 'polygon',
@@ -361,9 +360,8 @@ return [
                 'title'  => 'Indeks Vegetasi',
                 'fields' => [
                     'Nilai' => 'Nilai NDVI',
-                    'Kelas' => 'Kelas Vegetasi',
-                    'Keterangan' => 'Keterangan',
-                    'luas' => 'Luas Area',
+                    'Keterangan' => 'Kerapatan Vegetasi',
+                    'Luas' => 'Luas Area',
                 ],
             ],
         ],
@@ -383,7 +381,8 @@ return [
             'popup'    => [
                 'title'  => 'Index Vegetasi',
                 'fields' => [
-                    'klasifikasi' =>'Klasifikasi Lereng',
+                    'Nilai' => 'Nilai NDVI',
+                    'Keterangan' => 'Kerapatan Vegetasi',
                     'Luas' => 'Luas Area',
                 ],
             ],
@@ -404,16 +403,15 @@ return [
             'popup'    => [
                 'title'  => 'Index Vegetasi',
                 'fields' => [
-                    'Nilai' => 'Nilai NBVI',
-                    'Kelas' => 'Kelas',
-                    'Keterangan' => 'Keterangan',
-                    'luas' => 'Luas Area',
+                    'Klasifikas' => 'Klasifikasi',
+                    'Luas' => 'Luas Area',
                 ],
             ],
         ],
 
-        'RF' => [
-            'label'    => 'Random Forest',
+        //Check and fix it Later
+        'NDBI25' => [
+            'label'    => 'NDBI (Normalized Difference Built-up Index) 2025',
             'category' => 'sig',
             'geometry' => 'polygon',
             'rank'     => 'polygon',
@@ -427,10 +425,8 @@ return [
             'popup'    => [
                 'title'  => 'Index Vegetasi',
                 'fields' => [
-                    'Nilai' => 'Nilai NDBI',
-                    'Kelas' => 'Kelas',
-                    'Keterangan' => 'Keterangan',
-                    'luas' => 'Luas Area',
+                    'Klasifikas' => 'Klasifikasi',
+                    'Luas' => 'Luas Area',
                 ],
             ],
         ],
@@ -456,7 +452,7 @@ return [
         //     ],
         // ],
 
-        //         'Ketinggian' => [
+        // 'Ketinggian' => [
         //     'label'    => 'Ketinggian',
         //     'category' => 'sig',
         //     'geometry' => 'polygon',
@@ -477,7 +473,7 @@ return [
         //     ],
         // ],
 
-        //          'PL' => [
+        // 'PL' => [
         //     'label'    => 'Penggunaan Lahan',
         //     'category' => 'sig',
         //     'geometry' => 'polygon',
@@ -499,7 +495,7 @@ return [
         // ],
 
                                              // Lingkungan Mitigasi Bencana //
-                'Tanah' => [
+        'Tanah' => [
             'label'    => 'Jenis Tanah',
             'category' => 'lmb',
             'geometry' => 'polygon',
@@ -514,7 +510,7 @@ return [
             'popup'    => [
                 'title'  => 'Jenis Tanah',
                 'fields' => [
-                    'Tanah' => 'Tanah',
+                    'Tanah' => 'Jenis Tanah',
                     'Luas' => 'Luas Area',
                 ],
             ],
