@@ -284,6 +284,16 @@ function el(tag, className, text) {
     return n;
 }
 
+/** Mendapatkan warna spesifik objek (mendukung layer statis maupun 'from_geojson') */
+function getFeatureColor(def, props) {
+    const s = def.style || {};
+    if (s.color === "from_geojson") {
+        // Mengambil warna dari properti GeoJSON (warna, color, atau fill)
+        return props.warna || props.color || props.fill || DEFAULT_COLOR;
+    }
+    return s.color || DEFAULT_COLOR;
+}
+
 function buildPopup(id, props) {
     const def = CATALOG.layers[id];
     const cfg = def.popup || {};
@@ -312,15 +322,29 @@ function buildPopup(id, props) {
         box.appendChild(a);
     }
 
-    // 2. Judul Popup
-    box.appendChild(el("strong", "gis-popup-title mb-2 d-block", def.label));
+    // 2. Judul Popup Dilengkapi Kotak Indikator Warna (Legenda)
+    const titleContainer = el("div", "gis-popup-title mb-2 d-flex align-items-center gap-2 pb-2 border-bottom");
+    const color = getFeatureColor(def, props);
+
+    // Membuat bentuk kotak warna sesuai geometri layer (titik, garis, atau poligon)
+    const swatch = document.createElement("span");
+    const shape = def.geometry === "point"
+        ? "width:12px;height:12px;border-radius:50%"
+        : def.geometry === "line"
+          ? "width:16px;height:3px"
+          : "width:14px;height:12px;opacity:.85;border:1px solid rgba(0,0,0,0.2)";
+    swatch.style.cssText = `flex:none;display:inline-block;background:${color};${shape}`;
+
+    const titleText = el("strong", "flex-grow-1 m-0", def.label);
+    titleContainer.append(swatch, titleText);
+    box.appendChild(titleContainer);
 
     function titleCase(str) {
         if (!str) return "";
         return String(str).toLowerCase().replace(/(^|\s)\S/g, (L) => L.toUpperCase());
     }
 
-    // 3. Render Daftar Informasi Menggunakan Tabel HTML (Dijamin Titik Dua Sejajar Sempurna)
+    // 3. Render Daftar Informasi Menggunakan Tabel HTML (Titik Dua Sejajar)
     const table = document.createElement("table");
     table.style.cssText = "width:100%; border-collapse:collapse; font-size:0.85rem; margin-top:4px;";
 
@@ -332,17 +356,14 @@ function buildPopup(id, props) {
 
         const tr = document.createElement("tr");
 
-        // Kolom 1: Label (Lebar otomatis menyesuaikan teks terpanjang)
         const tdLabel = document.createElement("td");
         tdLabel.style.cssText = "color:var(--muted); padding:2px 0; white-space:nowrap; vertical-align:top;";
         tdLabel.textContent = cleanLabel;
 
-        // Kolom 2: Titik Dua (Lurus sejajar vertikal ke bawah)
         const tdColon = document.createElement("td");
         tdColon.style.cssText = "color:var(--muted); padding:2px 6px; vertical-align:top; text-align:center;";
         tdColon.textContent = ":";
 
-        // Kolom 3: Nilai / Value
         const tdVal = document.createElement("td");
         tdVal.style.cssText = "color:var(--ink); padding:2px 0; vertical-align:top; word-break:break-word;";
         tdVal.textContent = titleCase(v);

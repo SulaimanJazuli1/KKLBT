@@ -336,16 +336,17 @@ return [
             'popup'    => [
                 'title'  => 'RT',
                 'fields' => [
-                    'BatasRT' => 'RT',
-                    'luas' => 'Luas Area',
+                    'NAME_2' => 'Kabupaten',
+                    'NAME_3' => 'Kecamatan',
+                    'Total' => 'Luas Wilayah (Ha)'
                 ],
             ],
         ],
 
                                             // Sistem Informasi Geografis
 
-        'NDVI20' => [
-            'label'    => 'NDVI (Normalized Difference Vegetation Index) 2020',
+        'NDVI' => [
+            'label'    => 'NDVI (Indeks Vegetasi)',
             'category' => 'sig',
             'geometry' => 'polygon',
             'rank'     => 'polygon',
@@ -357,7 +358,7 @@ return [
                 'width'        => 1
             ],
             'popup'    => [
-                'title'  => 'Index Vegetasi',
+                'title'  => 'Indeks Vegetasi',
                 'fields' => [
                     'Nilai' => 'Nilai NDVI',
                     'Kelas' => 'Kelas Vegetasi',
@@ -382,10 +383,8 @@ return [
             'popup'    => [
                 'title'  => 'Index Vegetasi',
                 'fields' => [
-                    'Nilai' => 'Nilai NDVI',
-                    'Kelas' => 'Kelas Vegetasi',
-                    'Keterangan' => 'Keterangan',
-                    'luas' => 'Luas Area',
+                    'klasifikasi' =>'Klasifikasi Lereng',
+                    'Luas' => 'Luas Area',
                 ],
             ],
         ],
@@ -413,8 +412,8 @@ return [
             ],
         ],
 
-        'NDBI25' => [
-            'label'    => 'NDBI (Normalized Difference Built-up Index) 2025',
+        'RF' => [
+            'label'    => 'Random Forest',
             'category' => 'sig',
             'geometry' => 'polygon',
             'rank'     => 'polygon',
@@ -524,7 +523,7 @@ return [
 
                                             // Perencanaan Pembangunan Wilayah //
 
-            'PolaRuang' => [
+        'PR' => [
             'label'    => 'Pola Ruang',
             'category' => 'ppw',
             'geometry' => 'polygon',

@@ -247,6 +247,7 @@ body{
 /* Memastikan garis pemisah horizontal di dalam kotak selalu tampil jelas */
 .gis-tool .border-top {
   border-top: 1px solid #d5e0e4 !important;
+}
 .sidebar-bottom-btn {
     position: absolute;
     bottom: 0;
