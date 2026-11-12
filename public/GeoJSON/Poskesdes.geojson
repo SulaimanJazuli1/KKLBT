@@ -12,17 +12,29 @@
             "type": "Feature",
             "properties": {
                 "NAMOBJ": "Poskesdes Desa Alat",
-                "REMARK": "Poliklinik/Polindes/Posyandu",
-                "LCODE": "GI0020",
-                "FTYPE": "Sarana Kesehatan",
-                "foto": "Poskesdes.jpg"
+                "REMARK": "Poliklinik/Polindes/Posyandu"
             },
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    115.478777071000081,
-                    -2.625359381999942,
-                    67.796400000006543
+                    115.478414467936815,
+                    -2.625106508091958,
+                    0.0
+                ]
+            }
+        },
+                {
+            "type": "Feature",
+            "properties": {
+                "NAMOBJ": "Posyandu Kenanga",
+                "REMARK": "Posyandu Lansia"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    115.471489174755533,
+                    -2.632655872683175,
+                    0.0
                 ]
             }
         }

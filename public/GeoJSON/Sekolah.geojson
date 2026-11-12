@@ -13,16 +13,63 @@
             "properties": {
                 "NAMOBJ": "SD Negeri 2 Desa Alat",
                 "REMARK": "Pendidikan Dasar",
-                "LCODE": "GE0020",
-                "FTYPE": "Pendidikan dan IPTEK",
-                "foto": "Sekolah.jpg"
+                "foto": "sd2.jpg"
             },
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    115.473695605000103,
-                    -2.630395561999933,
-                    57.981199999994715
+                    115.473652774701989,
+                    -2.630048160693072,
+                    0.0
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "NAMOBJ": "SD Negeri 1 Desa Alat",
+                "REMARK": "Pendidikan Dasar",
+                "foto": "sd1.jpg"
+
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    115.496135316823882,
+                    -2.624273007578947,
+                    0.0
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "NAMOBJ": "Paud Terpadu Permata Hati 1 RT.6",
+                "REMARK": "Pendidikan Usia Dini",
+                "foto": "paud terpadu.jpg"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    115.494904787135169,
+                    -2.623691562394522,
+                    0.0
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "NAMOBJ": "Paud  Terpadu Permata Hati 1 RT. 1",
+                "REMARK": "Pendidikan Usia Dini",
+                "foto": "paud permata.jpg"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    115.470487420637198,
+                    -2.633460076713413,
+                    0.0
                 ]
             }
         }

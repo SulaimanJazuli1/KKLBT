@@ -6,6 +6,10 @@ return [
             'label' => 'Fasilitas Umum',
             'icon' => 'bi-building-fill',
         ],
+        'utilitas' => [
+            'label' => 'Prasarana Utilitas',
+            'icon'  => 'bi-lightning-charge-fill',
+        ],
         'transportasi' => [
             'label' => 'Prasarana Transportasi',
             'icon' => 'bi-signpost-split-fill',
@@ -35,8 +39,10 @@ return [
         'administrasi' => ['label' => 'Wilayah Administrasi', 'group' => 'administrasi'],
         'sungai' => ['label' => 'Sungai', 'group' => 'perairan'],
         'sig' => ['label' => 'Sistem Informasi Geografis', 'group' => 'analisis'],
-        'ppw' => ['label' => 'Perencanaan Pembangunan Wilayah', 'group' => 'analisis'],
         'lmb' => ['label' => 'Lingkungan Mitigasi Bencana', 'group' => 'analisis'],
+        'ppw' => ['label' => 'Perencanaan Pembangunan Wilayah', 'group' => 'analisis'],
+        'listrik' => ['label' => 'Jaringan Listrik', 'group' => 'utilitas'],
+
 
     ],
 
@@ -97,6 +103,62 @@ return [
             ],
         ],
 
+                'Trafo' => [
+            'label'    => 'Trafo Listrik',
+            'category' => 'listrik',
+            'geometry' => 'point',
+            'rank'     => 'point',
+            'file'     => 'trafo.geojson',
+            'visible'  => true,
+            'minzoom'  => null,
+            'label_field' => 'NAMOBJ',
+            'style'    => [
+                'type'     => 'bootstrap-icon',
+                'icon'     => 'bi-lightning-charge-fill',
+                'color'    => '#f59e0b',
+                'size'     => '24px',
+                'bg_color' => '#ffffff',
+            ],
+            'popup'    => [
+                'title'  => 'Trafo',             // atribut untuk judul popup
+                'fields' => [                   // atribut => label tampilan
+                    'NAMOBJ' => 'Nama Fasilitas',
+                ],
+                'image'  => [                   // opsional
+                    'field' => 'foto',          // atribut berisi NAMA FILE gambar
+                    'dir'   => 'img/WebGIS/Fasum',    // folder di /public
+                ],
+            ],
+        ],
+
+        'Pamsimas' => [
+            'label'    => 'Pamsimas',
+            'category' => 'air_bersih',
+            'geometry' => 'point',
+            'rank'     => 'point',
+            'file'     => 'pamsimas.geojson',
+            'visible'  => true,
+            'minzoom'  => null,
+            'label_field' => 'NAMOBJ',
+            'style'    => [
+                'type'     => 'bootstrap-icon',
+                'icon'     => 'bi-droplet-fill',
+                'color'    => '#0284c7',
+                'size'     => '24px',
+                'bg_color' => '#ffffff',
+            ],
+            'popup'    => [
+                'title'  => 'Pamsimas',             // atribut untuk judul popup
+                'fields' => [                   // atribut => label tampilan
+                    'NAMOBJ' => 'Nama Fasilitas',
+                ],
+                'image'  => [                   // opsional
+                    'field' => 'foto',          // atribut berisi NAMA FILE gambar
+                    'dir'   => 'img/WebGIS/Fasum',    // folder di /public
+                ],
+            ],
+        ],
+
         'Poskesdes' => [
             'label'    => 'Poskesdes',
             'category' => 'poskesdes',
@@ -117,6 +179,7 @@ return [
                 'title'  => 'Poskesdes',             // atribut untuk judul popup
                 'fields' => [                   // atribut => label tampilan
                     'NAMOBJ' => 'Nama Fasilitas',
+                    'REMARK'=> 'Jenis Fasilitas',
                 ],
                 'image'  => [                   // opsional
                     'field' => 'foto',          // atribut berisi NAMA FILE gambar
@@ -216,13 +279,27 @@ return [
             'rank'     => 'lineSungai',
             'file'     => 'Sungai.geojson',
             'visible'  => true,
-            'style'    => ['color' => '#38bdf8', 'width' => 4],   // opsional: 'dash' => [2, 2]
+            'style'    => ['color' => '#38bdf8', 'width' => 2.5],   // opsional: 'dash' => [2, 2]
             'popup'    => [
                 'title'  => 'Aliran Sungai',
                 'fields' => [
-                    'NAMOBJ' => 'Nama Sungai',
-                    'REMARK' => 'Jenis Alur',
-                    'Panjang' => 'Panjang Sungai',
+                    // 'Panjang' => 'Panjang Sungai',
+                ],
+            ],
+        ],
+
+                'Jaringan' => [
+            'label'    => 'Sistem Jaringan',
+            'category' => 'listrik',
+            'geometry' => 'line',
+            'rank'     => 'lineSungai',
+            'file'     => 'Sistem Jaringan.geojson',
+            'visible'  => false,
+            'style'    => ['color' => '#F59E0B', 'width' => 0.5],   // opsional: 'dash' => [2, 2]
+            'popup'    => [
+                'title'  => 'Aliran Sungai',
+                'fields' => [
+                    'LN_ENERGI' => 'Jenis Kelistrikan',
                 ],
             ],
         ],
@@ -234,7 +311,7 @@ return [
             'rank'     => 'lineJalan',
             'file'     => 'Jalan.geojson',
             'visible'  => true,
-            'style'    => ['color' => '#030303', 'width' => 2],   // opsional: 'dash' => [2, 2]
+            'style'    => ['color' => '#030303', 'width' => 1],   // opsional: 'dash' => [2, 2]
             'popup'    => [
                 'title'  => 'Jalan',
                 'fields' => [
@@ -245,15 +322,19 @@ return [
         ],
 
         'Admin' => [
-            'label'    => 'Desa Alat',
+            'label'    => 'Batas Desa',
             'category' => 'administrasi',
             'geometry' => 'polygon',
             'rank'     => 'polygon',
-            'file'     => 'Batas Desa.geojson',
+            'file'     => 'RT.geojson',
             'visible'  => true,
-            'style'    => ['color' => '#3ca22a', 'fill_opacity' => 0.4, 'width' => 2],
+            'style'      => [
+                'color'        => 'from_geojson',
+                'fill_opacity' => 0.6,
+                'width'        => 1
+            ],
             'popup'    => [
-                'title'  => 'Batas',
+                'title'  => 'RT',
                 'fields' => [
                     'NAME_2' => 'Kabupaten',
                     'NAME_3' => 'Kecamatan',
@@ -269,7 +350,7 @@ return [
             'category' => 'sig',
             'geometry' => 'polygon',
             'rank'     => 'polygon',
-            'file'     => 'NDVI.geojson',
+            'file'     => 'NDVI20.geojson',
             'visible'  => false,
             'style'      => [
                 'color'        => 'from_geojson',
@@ -287,33 +368,12 @@ return [
             ],
         ],
 
-        'Lereng' => [
-            'label'    => 'Kemiringan Lereng',
+        'NDVI25' => [
+            'label'    => 'NDVI (Normalized Difference Vegetation Index) 2025',
             'category' => 'sig',
             'geometry' => 'polygon',
             'rank'     => 'polygon',
-            'file'     => 'Lereng.geojson',
-            'visible'  => false,
-            'style'      => [
-                'color'        => 'from_geojson',
-                'fill_opacity' => 0.7,
-                'width'        => 1
-            ],
-            'popup'    => [
-                'title'  => 'Kemiringan Lereng',
-                'fields' => [
-                    'klasifikasi' =>'Klasifikasi Lereng',
-                    'Luas' => 'Luas Area',
-                ],
-            ],
-        ],
-
-        'TutupanLahan' => [
-            'label'    => 'Tutupan Lahan (supervised classification) 2025',
-            'category' => 'sig',
-            'geometry' => 'polygon',
-            'rank'     => 'polygon',
-            'file'     => 'Tuplah25.geojson',
+            'file'     => 'NDVI25.geojson',
             'visible'  => false,
             'style'      => [
                 'color'        => 'from_geojson',
@@ -321,10 +381,33 @@ return [
                 'width'        => 1
             ],
             'popup'    => [
-                'title'  => 'Tutupan Lahan',
+                'title'  => 'Index Vegetasi',
                 'fields' => [
-                    'Keterangan' => 'Keterangan',
+                    'klasifikasi' =>'Klasifikasi Lereng',
                     'Luas' => 'Luas Area',
+                ],
+            ],
+        ],
+
+        'NDBI20' => [
+            'label'    => 'NDBI (Normalized Difference Built-up Index) 2020',
+            'category' => 'sig',
+            'geometry' => 'polygon',
+            'rank'     => 'polygon',
+            'file'     => 'NDBI20.geojson',
+            'visible'  => false,
+            'style'      => [
+                'color'        => 'from_geojson',
+                'fill_opacity' => 0.6,
+                'width'        => 1
+            ],
+            'popup'    => [
+                'title'  => 'Index Vegetasi',
+                'fields' => [
+                    'Nilai' => 'Nilai NBVI',
+                    'Kelas' => 'Kelas',
+                    'Keterangan' => 'Keterangan',
+                    'luas' => 'Luas Area',
                 ],
             ],
         ],
@@ -334,7 +417,7 @@ return [
             'category' => 'sig',
             'geometry' => 'polygon',
             'rank'     => 'polygon',
-            'file'     => 'RF.geojson',
+            'file'     => 'NDBI25.geojson',
             'visible'  => false,
             'style'      => [
                 'color'        => 'from_geojson',
@@ -342,13 +425,101 @@ return [
                 'width'        => 1
             ],
             'popup'    => [
-                'title'  => 'Tutupan Lahan',
+                'title'  => 'Index Vegetasi',
                 'fields' => [
+                    'Nilai' => 'Nilai NDBI',
+                    'Kelas' => 'Kelas',
                     'Keterangan' => 'Keterangan',
+                    'luas' => 'Luas Area',
+                ],
+            ],
+        ],
+
+        // 'Lereng' => [
+        //     'label'    => 'Kemiringan Lereng',
+        //     'category' => 'sig',
+        //     'geometry' => 'polygon',
+        //     'rank'     => 'polygon',
+        //     'file'     => 'Lereng.geojson',
+        //     'visible'  => false,
+        //     'style'      => [
+        //         'color'        => 'from_geojson',
+        //         'fill_opacity' => 0.7,
+        //         'width'        => 1
+        //     ],
+        //     'popup'    => [
+        //         'title'  => 'Kemiringan Lereng',
+        //         'fields' => [
+        //             'klasifikasi' =>'Klasifikasi Lereng',
+        //             'Luas' => 'Luas Keseluruhan',
+        //         ],
+        //     ],
+        // ],
+
+        //         'Ketinggian' => [
+        //     'label'    => 'Ketinggian',
+        //     'category' => 'sig',
+        //     'geometry' => 'polygon',
+        //     'rank'     => 'polygon',
+        //     'file'     => 'Ketinggian.geojson',
+        //     'visible'  => false,
+        //     'style'      => [
+        //         'color'        => 'from_geojson',
+        //         'fill_opacity' => 0.7,
+        //         'width'        => 1
+        //     ],
+        //     'popup'    => [
+        //         'title'  => 'Ketinggian',
+        //         'fields' => [
+        //             'klasifikasi' =>'Klasifikasi',
+        //             'Luas' => 'Luas Keseluruhan',
+        //         ],
+        //     ],
+        // ],
+
+        //          'PL' => [
+        //     'label'    => 'Penggunaan Lahan',
+        //     'category' => 'sig',
+        //     'geometry' => 'polygon',
+        //     'rank'     => 'polygon',
+        //     'file'     => 'RF.geojson',
+        //     'visible'  => false,
+        //     'style'      => [
+        //         'color'        => 'from_geojson',
+        //         'fill_opacity' => 0.6,
+        //         'width'        => 1
+        //     ],
+        //     'popup'    => [
+        //         'title'  => 'Penggunaan Lahan',
+        //         'fields' => [
+        //             'Keterangan' => 'Keterangan',
+        //             'Luas' => 'Luas Area',
+        //         ],
+        //     ],
+        // ],
+
+                                             // Lingkungan Mitigasi Bencana //
+                'Tanah' => [
+            'label'    => 'Jenis Tanah',
+            'category' => 'lmb',
+            'geometry' => 'polygon',
+            'rank'     => 'polygon',
+            'file'     => 'Jenis Tanah.geojson',
+            'visible'  => false,
+            'style'      => [
+                'color'        => 'from_geojson',
+                'fill_opacity' => 0.6,
+                'width'        => 1
+            ],
+            'popup'    => [
+                'title'  => 'Jenis Tanah',
+                'fields' => [
+                    'Tanah' => 'Tanah',
                     'Luas' => 'Luas Area',
                 ],
             ],
         ],
+
 
                                             // Perencanaan Pembangunan Wilayah //
 
@@ -372,8 +543,5 @@ return [
                 ],
             ],
         ],
-
-
-                                            // Lingkungan Mitigasi Bencana //
     ],
 ];
