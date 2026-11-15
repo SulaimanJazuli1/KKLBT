@@ -377,7 +377,7 @@
                 <span class="small text-muted">Skala Ketinggian</span>
                 <span id="terrainExagVal" class="small fw-bold text-dark" style="font-size: 0.95rem;">100%</span>
               </div>
-              <input type="range" id="terrainExagRange" class="form-range" min="0" max="175" value="100" step="10">
+              <input type="range" id="terrainExagRange" class="form-range" min="0" max="100" value="100" step="10">
             </div>
           </div>
 
