@@ -345,7 +345,7 @@ return [
                                             // Sistem Informasi Geografis
 
         'NDVI' => [
-            'label'    => 'NDVI (Indeks Vegetasi)',
+            'label'    => 'NDVI (Normalized Difference Vegetation Index)',
             'category' => 'sig',
             'geometry' => 'polygon',
             'rank'     => 'polygon',
@@ -452,29 +452,28 @@ return [
             ],
         ],
 
-                'Ketinggian' => [
-            'label'    => 'Ketinggian',
-            'category' => 'sig',
-            'geometry' => 'polygon',
-            'rank'     => 'polygon',
-            'file'     => 'Ketinggian.geojson',
-            'visible'  => false,
-            'style'      => [
-                'color'        => 'from_geojson',
-                'fill_opacity' => 0.7,
-                'width'        => 1
-            ],
-            'popup'    => [
-                'title'  => 'Ketinggian',
-                'fields' => [
-                    'Ketinggian' =>'Ketinggian',
-                    'Klasifikas' => 'Relief',
-                    'Luas' => 'Luas',
-                ],
-            ],
-        ],
+        // 'Ketinggian' => [
+        //     'label'    => 'Ketinggian',
+        //     'category' => 'sig',
+        //     'geometry' => 'polygon',
+        //     'rank'     => 'polygon',
+        //     'file'     => 'Ketinggian.geojson',
+        //     'visible'  => false,
+        //     'style'      => [
+        //         'color'        => 'from_geojson',
+        //         'fill_opacity' => 0.7,
+        //         'width'        => 1
+        //     ],
+        //     'popup'    => [
+        //         'title'  => 'Ketinggian',
+        //         'fields' => [
+        //             'klasifikasi' =>'Klasifikasi',
+        //             'Luas' => 'Luas Keseluruhan',
+        //         ],
+        //     ],
+        // ],
 
-        //          'PL' => [
+        // 'PL' => [
         //     'label'    => 'Penggunaan Lahan',
         //     'category' => 'sig',
         //     'geometry' => 'polygon',
@@ -496,7 +495,7 @@ return [
         // ],
 
                                              // Lingkungan Mitigasi Bencana //
-                'Tanah' => [
+        'Tanah' => [
             'label'    => 'Jenis Tanah',
             'category' => 'lmb',
             'geometry' => 'polygon',
@@ -511,7 +510,7 @@ return [
             'popup'    => [
                 'title'  => 'Jenis Tanah',
                 'fields' => [
-                    'Tanah' => 'Tanah',
+                    'Tanah' => 'Jenis Tanah',
                     'Luas' => 'Luas Area',
                 ],
             ],
