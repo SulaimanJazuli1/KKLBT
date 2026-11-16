@@ -336,8 +336,8 @@ return [
             'popup'    => [
                 'title'  => 'RT',
                 'fields' => [
-                    'BatasRT' => 'Wilayah RT',
-                    'Luas' => 'Luas Wilayah'
+                    'BatasRT' => 'RT',
+                    'Luas' => 'Luas Wilayah (Ha)'
                 ],
             ],
         ],
@@ -360,7 +360,7 @@ return [
                 'title'  => 'Indeks Vegetasi',
                 'fields' => [
                     'Nilai' => 'Nilai NDVI',
-                    'Keterangan' => 'Kerapatan Vegetasi',
+                    'Keterangan' => 'Keterangan',
                     'Luas' => 'Luas Area',
                 ],
             ],
@@ -382,7 +382,7 @@ return [
                 'title'  => 'Index Vegetasi',
                 'fields' => [
                     'Nilai' => 'Nilai NDVI',
-                    'Keterangan' => 'Kerapatan Vegetasi',
+                    'Keterangan' => 'Keterangan',
                     'Luas' => 'Luas Area',
                 ],
             ],
@@ -401,15 +401,14 @@ return [
                 'width'        => 1
             ],
             'popup'    => [
-                'title'  => 'Index Vegetasi',
+                'title'  => 'Index Bangunan',
                 'fields' => [
-                    'Klasifikas' => 'Klasifikasi',
+                    'Klasifikas' => 'Keterangan',
                     'Luas' => 'Luas Area',
                 ],
             ],
         ],
 
-        //Check and fix it Later
         'NDBI25' => [
             'label'    => 'NDBI (Normalized Difference Built-up Index) 2025',
             'category' => 'sig',
@@ -423,34 +422,35 @@ return [
                 'width'        => 1
             ],
             'popup'    => [
-                'title'  => 'Index Vegetasi',
+                'title'  => 'Index Bangunan',
                 'fields' => [
-                    'Klasifikas' => 'Klasifikasi',
+                    'Klasifikas' => 'Keterangan',
                     'Luas' => 'Luas Area',
                 ],
             ],
         ],
 
-        // 'Lereng' => [
-        //     'label'    => 'Kemiringan Lereng',
-        //     'category' => 'sig',
-        //     'geometry' => 'polygon',
-        //     'rank'     => 'polygon',
-        //     'file'     => 'Lereng.geojson',
-        //     'visible'  => false,
-        //     'style'      => [
-        //         'color'        => 'from_geojson',
-        //         'fill_opacity' => 0.7,
-        //         'width'        => 1
-        //     ],
-        //     'popup'    => [
-        //         'title'  => 'Kemiringan Lereng',
-        //         'fields' => [
-        //             'klasifikasi' =>'Klasifikasi Lereng',
-        //             'Luas' => 'Luas Keseluruhan',
-        //         ],
-        //     ],
-        // ],
+        'Lereng' => [
+            'label'    => 'Kemiringan Lereng',
+            'category' => 'sig',
+            'geometry' => 'polygon',
+            'rank'     => 'polygon',
+            'file'     => 'Lereng.geojson',
+            'visible'  => false,
+            'style'      => [
+                'color'        => 'from_geojson',
+                'fill_opacity' => 0.7,
+                'width'        => 1
+            ],
+            'popup'    => [
+                'title'  => 'Kemiringan Lereng',
+                'fields' => [
+                    'KL__' =>'Beda Tinggi',
+                     'Klasifikas' => 'Relief',
+                    'Luas' => 'Luas',
+                ],
+            ],
+        ],
 
         // 'Ketinggian' => [
         //     'label'    => 'Ketinggian',
