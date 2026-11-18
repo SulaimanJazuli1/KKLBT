@@ -279,25 +279,27 @@ return [
             'rank'     => 'lineSungai',
             'file'     => 'Sungai.geojson',
             'visible'  => true,
-            'style'    => ['color' => '#38bdf8', 'width' => 2.5],   // opsional: 'dash' => [2, 2]
+            'style'    => ['color' => '#38bdf8', 'width' => 2.5],
             'popup'    => [
                 'title'  => 'Aliran Sungai',
                 'fields' => [
-                    // 'Panjang' => 'Panjang Sungai',
+                    'NAMOBJ' => 'Nama Sungai',
+                    'REMARK' => 'Jenis Sungai',
+                    // 'Panjang' => 'Panjang Aliran',
                 ],
             ],
         ],
 
         'Jaringan' => [
-            'label'    => 'Sistem Jaringan',
+            'label'    => 'Sistem Jaringan Kelistrikan',
             'category' => 'listrik',
             'geometry' => 'line',
             'rank'     => 'lineSungai',
             'file'     => 'Sistem Jaringan.geojson',
             'visible'  => false,
-            'style'    => ['color' => '#F59E0B', 'width' => 0.5],   // opsional: 'dash' => [2, 2]
+            'style'    => ['color' => '#F59E0B', 'width' => 0.5],
             'popup'    => [
-                'title'  => 'Aliran Sungai',
+                'title'  => 'Kelistrikan',
                 'fields' => [
                     'LN_ENERGI' => 'Jenis Kelistrikan',
                 ],
@@ -311,7 +313,7 @@ return [
             'rank'     => 'lineJalan',
             'file'     => 'Jalan.geojson',
             'visible'  => true,
-            'style'    => ['color' => '#030303', 'width' => 1],   // opsional: 'dash' => [2, 2]
+            'style'    => ['color' => '#030303', 'width' => 1],
             'popup'    => [
                 'title'  => 'Jalan',
                 'fields' => [
@@ -446,8 +448,8 @@ return [
                 'title'  => 'Kemiringan Lereng',
                 'fields' => [
                     'KL__' =>'Beda Tinggi',
-                     'Klasifikas' => 'Relief',
-                    'Luas' => 'Luas',
+                    'Klasifikas' => 'Relief',
+                    'Luas' => 'Luas Keseluruhan',
                 ],
             ],
         ],
