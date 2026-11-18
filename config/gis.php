@@ -283,13 +283,15 @@ return [
             'popup'    => [
                 'title'  => 'Aliran Sungai',
                 'fields' => [
-                    // 'Panjang' => 'Panjang Sungai',
+                    'NAMOBJ' => 'Nama Sungai',
+                    'REMARK' => 'Jenis Sungai',
+                    // 'Panjang' => 'Panjang Aliran',
                 ],
             ],
         ],
 
         'Jaringan' => [
-            'label'    => 'Sistem Jaringan',
+            'label'    => 'Sistem Jaringan Kelistrikan',
             'category' => 'listrik',
             'geometry' => 'line',
             'rank'     => 'lineSungai',
@@ -297,7 +299,7 @@ return [
             'visible'  => false,
             'style'    => ['color' => '#F59E0B', 'width' => 0.5],
             'popup'    => [
-                'title'  => 'Aliran Sungai',
+                'title'  => 'Kelistrikan',
                 'fields' => [
                     'LN_ENERGI' => 'Jenis Kelistrikan',
                 ],
@@ -446,8 +448,8 @@ return [
                 'title'  => 'Kemiringan Lereng',
                 'fields' => [
                     'KL__' =>'Beda Tinggi',
-                     'Klasifikas' => 'Relief',
-                    'Luas' => 'Luas',
+                    'Klasifikas' => 'Relief',
+                    'Luas' => 'Luas Keseluruhan',
                 ],
             ],
         ],
