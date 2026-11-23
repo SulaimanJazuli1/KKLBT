@@ -4,9 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ViewController;
 use App\Http\Controllers\GisController;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [ViewController::class, 'beranda']);
 
 Route::get('/beranda', [ViewController::class, 'beranda'])->name('beranda');
 
